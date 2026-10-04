@@ -1,1 +1,334 @@
+/* ==========================================================
+   IMMC – Custom CSS for Elementor Free
+   Paste into: Appearance → Customize → Additional CSS
+   Add the class names below in Elementor:
+   Widget/Container → Advanced → CSS Classes (no dot)
+   ========================================================== */
 
+:root {
+  --immc-green: #0f2a24;
+  --immc-green-2: #163a31;
+  --immc-gold: #c08a2e;
+  --immc-gold-light: #e0a93b;
+  --immc-beige: #f6f3ee;
+  --immc-text: #1a1a1a;
+  --immc-muted: #6b6b6b;
+  --immc-border: #e5dfd3;
+}
+
+body {
+  color: var(--immc-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- HEADER ---------- */
+/* Class: immc-header  (on header container) */
+.immc-header {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.immc-header .elementor-nav-menu a,
+.immc-header .hfe-nav-menu a {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 14px;
+  position: relative;
+}
+.immc-header .current-menu-item > a,
+.immc-header .elementor-nav-menu a:hover {
+  color: var(--immc-gold);
+}
+.immc-header .current-menu-item > a::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 0;
+  height: 2px;
+  background: var(--immc-gold);
+}
+
+/* ---------- HERO ---------- */
+/* Class: immc-hero (container) */
+.immc-hero {
+  position: relative;
+  min-height: 520px;
+  background-size: cover;
+  background-position: center;
+}
+.immc-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10, 25, 22, 0.85) 0%, rgba(10, 25, 22, 0.35) 55%, transparent 100%);
+  z-index: 0;
+}
+.immc-hero > * { position: relative; z-index: 1; }
+
+/* Class: immc-gold  (on a <span> inside heading, or use inline <span class="immc-gold">) */
+.immc-gold { color: var(--immc-gold-light); }
+
+/* ---------- BUTTONS ---------- */
+/* Class: immc-btn-gold */
+.immc-btn-gold .elementor-button {
+  background: var(--immc-gold);
+  color: #fff;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 14px 26px;
+  border: 1px solid var(--immc-gold);
+  transition: all 0.25s ease;
+}
+.immc-btn-gold .elementor-button:hover {
+  background: var(--immc-gold-light);
+  border-color: var(--immc-gold-light);
+}
+
+/* Class: immc-btn-outline */
+.immc-btn-outline .elementor-button {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 14px 26px;
+  transition: all 0.25s ease;
+}
+.immc-btn-outline .elementor-button:hover {
+  background: #fff;
+  color: var(--immc-green);
+}
+
+/* Class: immc-btn-dark */
+.immc-btn-dark .elementor-button {
+  background: var(--immc-green);
+  color: #fff;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 13px 24px;
+  transition: all 0.25s ease;
+}
+.immc-btn-dark .elementor-button:hover { background: var(--immc-gold); }
+
+/* ---------- FEATURE STRIP ---------- */
+/* Class: immc-feature (on each of the 4 columns/containers) */
+.immc-feature {
+  position: relative;
+  padding: 0 24px;
+}
+.immc-feature:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: #e8cfa0;
+}
+.immc-feature .elementor-icon-box-title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.immc-feature .elementor-icon-box-description {
+  font-size: 12px;
+  color: var(--immc-muted);
+}
+.immc-feature .elementor-icon { color: var(--immc-green); }
+
+/* ---------- SECTION LABEL ("OUR SERVICES ——") ---------- */
+/* Class: immc-label (on a Heading widget) */
+.immc-label .elementor-heading-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--immc-gold);
+}
+.immc-label .elementor-heading-title::after {
+  content: "";
+  width: 50px;
+  height: 1px;
+  background: var(--immc-gold);
+}
+
+/* ---------- SERVICE CARDS ---------- */
+/* Class: immc-card (on each card container) */
+.immc-card {
+  background: #fff;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: visible;
+}
+.immc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+.immc-card .elementor-widget-image img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Class: immc-card-icon (on the Icon widget) – dark green overlapping square */
+.immc-card-icon {
+  margin-top: -30px;
+  margin-left: 16px;
+  position: relative;
+  z-index: 2;
+}
+.immc-card-icon .elementor-icon {
+  width: 54px;
+  height: 54px;
+  background: var(--immc-green);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+/* Class: immc-link (on a Button or Text link: "Learn More →") */
+.immc-link .elementor-button {
+  background: transparent;
+  color: var(--immc-text);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0 0 4px;
+  border-radius: 0;
+  border-bottom: 2px solid var(--immc-gold);
+}
+.immc-link .elementor-button:hover { color: var(--immc-gold); }
+
+/* ---------- ABOUT SECTION ---------- */
+/* Class: immc-about (container) */
+.immc-about { background: var(--immc-beige); }
+
+/* Class: immc-about-item (each Icon Box row) */
+.immc-about-item {
+  padding: 16px 0;
+  border-bottom: 1px solid #e1d6c0;
+}
+.immc-about-item:last-child { border-bottom: none; }
+.immc-about-item .elementor-icon { color: var(--immc-gold); }
+.immc-about-item .elementor-icon-box-title { font-size: 13px; font-weight: 700; }
+.immc-about-item .elementor-icon-box-description { font-size: 12px; color: var(--immc-muted); }
+
+/* ---------- PROJECTS (DARK) ---------- */
+/* Class: immc-dark (container) */
+.immc-dark {
+  background: var(--immc-green);
+  color: #fff;
+}
+.immc-dark h1, .immc-dark h2, .immc-dark h3,
+.immc-dark .elementor-heading-title { color: #fff; }
+.immc-dark p { color: #cfd8d4; }
+
+/* Class: immc-project (each slide/image container with caption) */
+.immc-project { position: relative; overflow: hidden; }
+.immc-project img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.immc-project:hover img { transform: scale(1.05); }
+.immc-project .caption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 40px 18px 16px;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+}
+.immc-project .caption::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: var(--immc-gold);
+  margin-top: 8px;
+}
+
+/* Carousel arrows (round outlined) */
+.immc-dark .swiper-button-next,
+.immc-dark .swiper-button-prev,
+.immc-dark .elementor-swiper-button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  color: #fff;
+}
+
+/* ---------- SUSTAINABILITY BOXES ---------- */
+/* Class: immc-eco (each Icon Box) */
+.immc-eco {
+  background: #fff;
+  border-top: 3px solid var(--immc-gold);
+  padding: 24px 22px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  height: 100%;
+}
+.immc-eco .elementor-icon { color: var(--immc-gold); }
+.immc-eco .elementor-icon-box-title { font-size: 14px; font-weight: 700; }
+.immc-eco .elementor-icon-box-description { font-size: 13px; color: var(--immc-muted); }
+
+/* ---------- CTA BANNER ---------- */
+/* Class: immc-cta (container with background image) */
+.immc-cta {
+  position: relative;
+  background-color: var(--immc-green);
+  background-size: cover;
+  background-position: center;
+}
+.immc-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 42, 36, 0.88);
+}
+.immc-cta > * { position: relative; z-index: 1; }
+
+/* ---------- FOOTER ---------- */
+/* Class: immc-footer (container) */
+.immc-footer {
+  background: var(--immc-green);
+  color: #cfd8d4;
+  font-size: 13px;
+}
+.immc-footer h4,
+.immc-footer .elementor-heading-title { color: #fff; font-size: 13px; font-weight: 700; }
+.immc-footer a { color: #cfd8d4; transition: color 0.2s; }
+.immc-footer a:hover { color: var(--immc-gold-light); }
+.immc-footer .elementor-icon-list-icon { color: var(--immc-gold-light); }
+.immc-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 11px;
+  color: #9fb0aa;
+  padding-top: 14px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+  .immc-hero { min-height: 440px; }
+  .immc-feature:not(:last-child)::after { display: none; }
+}
+
+@media (max-width: 767px) {
+  .immc-hero { min-height: 380px; }
+  .immc-hero .elementor-heading-title { font-size: 30px; line-height: 1.2; }
+  .immc-feature { padding: 12px 0; }
+  .immc-card .elementor-widget-image img { height: 150px; }
+  .immc-project img { height: 190px; }
+  .immc-eco { padding: 18px; }
+}
